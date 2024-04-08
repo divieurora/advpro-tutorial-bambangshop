@@ -1,8 +1,6 @@
 pub mod product;
 pub mod notification;
 
-use std::intrinsics::nontemporal_store;
-
 use rocket::fairing::AdHoc;
 
 pub fn route_stage() -> AdHoc {
