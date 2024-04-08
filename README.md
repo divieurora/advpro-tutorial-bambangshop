@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   ✅ Commit: `Implement delete function in Subscriber repository.`
     -   ✅ Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   ✅ Commit: `Create Notification service struct skeleton.`
+    -   ✅ Commit: `Implement subscribe function in Notification service.`
+    -   ✅ Commit: `Implement subscribe function in Notification controller.`
+    -   ✅ Commit: `Implement unsubscribe function in Notification service.`
+    -   ✅ Commit: `Implement unsubscribe function in Notification controller.`
+    -   ✅ Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -90,5 +90,16 @@ This is the place for you to write reflections:
     Dalam _programming_ dengan Rust, penggunaan `DashMap` lebih cocok untuk _multithreading_. Bambangshop menggunakan _multithreading_ sehingga `DashMap` diperlukan karena `SUBSCRIBERS` akan diakses oleh banyak thread. Singleton saja tidak relevan karena Singleton bertujuan untuk memastikan hanya ada satu instansi objek selama program berjalan, sedangkan kebutuhan kita adalah untuk memastikan keamanan akses data dalam skenario multi-threading. Dengan DashMap, kita dapat memastikan bahwa daftar subscriber terhadap produk kita dikelola secara aman dan efisien dalam satu struktur data.
 
 #### Reflection Publisher-2
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+    Sesuai dengan salah satu SOLID Principle yaitu _Single Responsibility Principle_, Service dan Repository perlu dibedakan karena memiliki tanggung jawab yang berbeda. Service lebih bertanggung jawab pada _business logic_ aplikasi, sedangkan Repository lebih bertanggung jawab pada _handling_ penyimpanan data. Pemisahan Service dan Repository akan sangat membantu dalam _maintainability_ proyek ini.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (`Program, Subscriber, Notification`) affect the code complexity for each model?
+
+    Jika hanya menggunakan Model, cenderung akan terjadi _coupling_ pada kode sehingga kompleksitas kode meningkat karena Model harus menangani semua hal termasuk _business logic_ dan penyimpanan data. Hal ini akan menyebabkan kesulitan ketika ingin _maintain_ kode, serta sulit untuk melakukan _testing_ untuk setiap komponen yang terpisah.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. Maybe you want to also list which features in Postman you are interested in or feel like it’s helpful to help your Group Project or any of your future software engineering projects.
+
+    Menurut saya, Postman akan sangat membantu dalam _testing_ karena saya bisa dengan muudah menguji _response_ HTTP dengan mengirim _request_ HTTP ke API yang sedang dikembangkan. Postman juga menyediakan fitur-fitur yang _advanced_ yang bermanfaat untuk Proyek Kelompok seperti _Collaborative Collections_ untuk mengelompokkan beberapa _request_ HTTP dalam satu koleksi yang sama sehingga memfasilitasi koordinasi dalam pengembangan dan pengujian API proyek kelompok.
 
 #### Reflection Publisher-3
